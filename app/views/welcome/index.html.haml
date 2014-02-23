@@ -1,2 +1,6 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+= form_tag redeem_vouchers_path, method: "get" do
+  .form-group
+    = text_field_tag :voucher_code, nil, placeholder: "Gutscheincode"
+  .form-group
+    %button.btn.btn-primary.submit{type: "submit", title: "Gutschein einlösen"}
+      Gutschein einlösen
