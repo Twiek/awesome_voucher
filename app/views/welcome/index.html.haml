@@ -1,6 +1,6 @@
-= form_tag redeem_vouchers_path, method: "get" do
-  .form-group
-    = text_field_tag :voucher_code, nil, placeholder: "Gutscheincode"
-  .form-group
-    %button.btn.btn-primary.submit{type: "submit", title: "Gutschein einlösen"}
-      Gutschein einlösen
+.redemption_form
+  = form_tag redeem_vouchers_path, method: "get" do
+    .form-group
+      = text_field_tag :voucher_code, nil, autofocus: "", placeholder: "Gutscheincode", class: "input-xlg"
+      %button.btn.btn-custom-darken.btn-large.btn-primary.submit{type: "submit", title: "Gutschein einlösen"}
+        Gutschein einlösen
