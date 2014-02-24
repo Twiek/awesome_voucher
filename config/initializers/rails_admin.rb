@@ -6,6 +6,10 @@ RailsAdmin.config do |config|
 
   ################  Global configuration  ################
 
+  # Make it play nice with Heroku
+  config.assets.initialize_on_precompile = false
+  config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
+
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Awesome Voucher', 'Admin']
   # or for a more dynamic name:
