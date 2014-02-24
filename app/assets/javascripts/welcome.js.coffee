@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  voucherRegex = /^[a-zA-Z\d*\-*]{1,8}$/
+  voucherRegex = /^[a-zA-Z\d*\-*]{0,8}$/
   $("#voucher_code").keyup ->
     userInput = $("#voucher_code").val()
     if !voucherRegex.test(userInput)
