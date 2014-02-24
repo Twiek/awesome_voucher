@@ -61,5 +61,7 @@ module AwesomeVoucher
 
     # Make it work on Heroku
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
+
   end
 end
