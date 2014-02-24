@@ -1,7 +1,6 @@
 class VouchersController < ApplicationController
-
   def redeem
-    voucher = Voucher.find_by_code(params[:voucher_code])
+    voucher = Voucher.find_by_code(params[:voucher_code].downcase)
     if voucher && voucher.redeemed == false
       voucher.redeemed = true
       voucher.save
@@ -15,5 +14,4 @@ class VouchersController < ApplicationController
       redirect_to root_path
     end
   end
-
 end

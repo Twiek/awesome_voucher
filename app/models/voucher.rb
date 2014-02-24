@@ -9,4 +9,12 @@ class Voucher < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :value, presence: true, format: { with: VALID_VALUE_REGEX },
                     numericality: true
+
+  before_save :downcase_code
+
+  private
+
+    def downcase_code
+      self.code = self.code.downcase
+    end
 end
