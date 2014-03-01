@@ -8,10 +8,14 @@ $(document).ready ->
     userInput = $("#voucher_code").val()
     if !voucherRegex.test(userInput)
       $(".form-group").addClass "control-group error"
+      $("#warning-icon").show();
+      $("#approval-icon").hide();
       $("#warning_text").show();
       $('.btn').attr("disabled", true);
     else
       $(".form-group").removeClass "control-group error"
+      $("#approval-icon").show();
+      $("#warning-icon").hide();
       $("#warning_text").hide();
       $('.btn').attr("disabled", false);
     return
